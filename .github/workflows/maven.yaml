@@ -8,10 +8,12 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout code
-              uses: actions/checkout@v4
-            - name: build with maven package
-              run: mvn package
+            - uses: actions/checkout@v4
+            - uses: actions/setup-dotnet@v4
+              with:
+                dotnet-version: '9.0.100'
+            - name: restore
+              run: dotnet restore --project src/Presentation/Nop.Web/Nop.Web.csproj
 
 
 
