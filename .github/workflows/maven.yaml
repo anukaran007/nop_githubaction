@@ -1,0 +1,25 @@
+
+name: "build maven pull request in ci"
+on:
+    push:
+        branches:
+            - "main"
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+            - name: build with maven package
+              run: mvn package
+
+
+
+
+
+
+
+
+  
+          
+          
