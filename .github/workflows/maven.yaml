@@ -14,7 +14,8 @@ jobs:
                 dotnet-version: '9.0.100'
             - name: restore
               run: dotnet restore --project src/Presentation/Nop.Web/Nop.Web.csproj
-
+            - name: publish
+              run: dotnet publish --configuration Release --output ./publish --project src/Presentation/Nop.Web/Nop.Web.csproj
 
 
 
